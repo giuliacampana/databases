@@ -5,16 +5,19 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 var dbCon = mysql.createConnection({
-  host: "localhost",
-  user: "root"
+  host: 'localhost:3000/classes/messages',
+  user: 'root',
+  password: '',
+  database: 'chat'
 });
 
-dbCon.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  dbCon.query(sql, function (err, data) {
-    if (err) throw err;
-    console.log("Data is ",data)
-  })
-})
+// dbCon.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+
+//   dbCon.query(sql, function (err, data) {
+//     if (err) throw err;
+//     console.log("Data is ",data)
+//   });
+// })
 

@@ -29,7 +29,7 @@ handleData = function(chats) {
 };
 
 filterBadMessages = function(message) {
-  if (typeof message !== 'object' || message === null || !message.hasOwnProperty('username') || !message.hasOwnProperty('text') ||!message.hasOwnProperty('roomname') || message.roomname === null || message.text === null || message.username === null ||  message.roomname.includes('?') || message.roomname.includes('<') || message.roomname.includes('>') ||  message.text.includes('?') || message.text.includes('<') || message.text.includes('>') ||  message.username.includes('?') || message.username.includes('<') || message.username.includes('>')) {
+  if (typeof message !== 'object' || message === null || !message.hasOwnProperty('username') || !message.hasOwnProperty('text') || !message.hasOwnProperty('roomname') || message.roomname === null || message.text === null || message.username === null || message.roomname.includes('?') || message.roomname.includes('<') || message.roomname.includes('>') || message.text.includes('?') || message.text.includes('<') || message.text.includes('>') || message.username.includes('?') || message.username.includes('<') || message.username.includes('>')) {
     return false;
   }
   return true;
@@ -37,7 +37,7 @@ filterBadMessages = function(message) {
 
 app.send = function(message) {
   $.ajax({
-    url: 'localhost',
+    url: 'localhost:3000',
     type: 'POST',
     data: JSON.stringify(message),
     contentType: 'application/json',
@@ -53,7 +53,7 @@ app.send = function(message) {
 
 app.fetch = function() {
   $.ajax({
-    url: 'localhost', //keys=username%2Ctext%2Croomname
+    url: 'localhost:3000', //keys=username%2Ctext%2Croomname
     type: 'GET',
     // order=-createdAt
     contentType: 'application/json',
@@ -133,7 +133,7 @@ $(document).ready(function() {
     app.renderMessage(message);
   });
   
-  $('#createRoom').on('click', function(event){
+  $('#createRoom').on('click', function(event) {
     newRoom = $('#newRoom').val();
     $option = $(`<option value="${newRoom}">${newRoom}</option>`);
     $option.appendTo($('#rooms'));
