@@ -4,11 +4,12 @@ module.exports = {
   messages: {
     get: function (req, res) {
       models.messages.get(function(data) {
-        res.json(data);
+        res.send(data);
       });
     },
     post: function (req, res) {
       models.messages.post(req.body, res);
+      res.send(req.body)
     }
   }
 

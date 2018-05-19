@@ -1,4 +1,5 @@
--- CREATE DATABASE chat;
+DROP DATABASE IF EXISTS chat;
+CREATE DATABASE chat;
 
 USE chat;
 -- DROP TABLE IF IT EXISTS
@@ -8,15 +9,12 @@ USE chat;
 --   user_id int(30) AUTO_INCREMENT,
 --   PRIMARY KEY (user_id)
 -- );
-
-
 DROP TABLE IF EXISTS messages;
 CREATE TABLE messages (
   -- user_id int(30) REFERENCES users(user_id),
   users varchar(255),
   room varchar(255),
-  message varchar(255),
-  createdAt date
+  message varchar(255)
 );
 
 
