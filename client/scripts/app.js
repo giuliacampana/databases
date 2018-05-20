@@ -48,7 +48,7 @@ app.refresh = function() {
     contentType: 'application/json',
     success: function (data) {      
       app.clearMessages();
-      console.log(data)
+      console.log(data);
 
       var currentRoom = $('#rooms option:selected').val();
       $('.roomOption').remove();

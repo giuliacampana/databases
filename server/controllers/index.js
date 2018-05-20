@@ -9,7 +9,7 @@ module.exports = {
     },
     post: function (req, res) {
       models.messages.post(req.body, res);
-      res.send(req.body)
+      res.send(req.body);
     }
   }
 
